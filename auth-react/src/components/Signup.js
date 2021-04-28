@@ -1,10 +1,16 @@
 import React, { useRef } from "react";
 import { Form, Button, Card } from "react-bootstrap";
-
+import { useAuth } from "../Contexts/AuthContext";
 const Signup = (props) => {
-  const emailref = useRef();
+  const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  const { signup } = useAuth();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    signup(emailRef.current.value, passwordRef.current.value);
+  }
   return (
     <>
       <Card.Body>
@@ -13,7 +19,7 @@ const Signup = (props) => {
         <Form>
           <Form.Group id="email">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" ref={emailref} required />
+            <Form.Control type="email" ref={emailRef} required />
           </Form.Group>
 
           <Form.Group id="password">
