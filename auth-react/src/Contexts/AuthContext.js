@@ -16,6 +16,11 @@ export function AuthProvider({ children }) {
 
     //whenever this is called the user gets set
   }
+  function login(email, password) {
+    return auth.signInWithEmailAndPassword(email, password);
+
+    //whenever this is called the user gets set
+  }
 
   // using effect when ever the state changes
   useEffect(() => {
@@ -30,6 +35,7 @@ export function AuthProvider({ children }) {
   const value = {
     currentUser,
     signup,
+    login,
   };
   return (
     <AuthContext.Provider value={value}>
