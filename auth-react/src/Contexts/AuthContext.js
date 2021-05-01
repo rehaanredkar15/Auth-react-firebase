@@ -21,6 +21,11 @@ export function AuthProvider({ children }) {
 
     //whenever this is called the user gets set
   }
+  function logout(email, password) {
+    return auth.signOut();
+
+    //whenever this is called the user gets set
+  }
 
   // using effect when ever the state changes
   useEffect(() => {
@@ -36,6 +41,7 @@ export function AuthProvider({ children }) {
     currentUser,
     signup,
     login,
+    logout,
   };
   return (
     <AuthContext.Provider value={value}>
