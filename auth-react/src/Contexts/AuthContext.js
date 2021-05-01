@@ -27,6 +27,9 @@ export function AuthProvider({ children }) {
     //whenever this is called the user gets set
   }
 
+  function resetPassword(email) {
+    return auth.sendPasswordResetEmail(email);
+  }
   // using effect when ever the state changes
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
