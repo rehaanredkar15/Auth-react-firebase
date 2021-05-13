@@ -1,13 +1,12 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
-import { useAuth } from "../Contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
-export default function Login() {
+import { useAuth } from "../../Contexts/AuthContext";
+import { Link } from "react-router-dom";
+export default function ForgotPasword() {
   const emailRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
-  const { login, currentUser } = useAuth();
-  const history = useHistory();
+  const { resetPassword } = useAuth();
+  const [message, setMessage] = useState();
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -19,8 +18,8 @@ export default function Login() {
     try {
       setError("");
       setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
+      await resetPassword(emailRef.current.value);
+      setMessage("check your inbox for further instructins");
     } catch {
       setError("Failed to Signin ");
     }
@@ -30,23 +29,20 @@ export default function Login() {
   return (
     <>
       <Card.Body>
-        <h2 className="text-center mb-4"> Login </h2>
+        <h2 className="text-center mb-4"> PasswordReset </h2>
         {error && <Alert variant="danger"> {error} </Alert>}{" "}
+        {message && <Alert variant="sucess"> {message} </Alert>}{" "}
         <Form onSubmit={handleSubmit}>
           <Form.Group id="email">
             <Form.Label> Email </Form.Label>{" "}
             <Form.Control type="email" ref={emailRef} required />
           </Form.Group>{" "}
-          <Form.Group id="password">
-            <Form.Label> Password </Form.Label>{" "}
-            <Form.Control type="password" ref={passwordRef} required />
-          </Form.Group>{" "}
           <Button className="w-100" disabled={loading} type="submit">
-            Log In{" "}
+            Reset Password{" "}
           </Button>{" "}
         </Form>{" "}
         <div className="w-100 text-center mt-3">
-          <Link to="/forgot-password">Forgot Password? </Link>
+          <Link to="/login">Log In</Link>
         </div>
       </Card.Body>{" "}
       <Card.Body>
