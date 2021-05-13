@@ -13,6 +13,14 @@ export default function AddFolderButton() {
   function closeModal() {
     setOpen(false);
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    //creating a folder in the databaseURL
+    setName("");
+    closeModal();
+  }
   return (
     <>
       <Button onClick={openModal} variant="outline-success" size="sn">
