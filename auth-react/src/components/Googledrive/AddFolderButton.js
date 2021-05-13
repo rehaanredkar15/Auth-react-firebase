@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
+import { database } from "../../firebase";
+import { useAuth } from "../../Contexts/AuthContext";
 
 export default function AddFolderButton() {
   const [open, setOpen] = useState();
   const [name, setName] = useState("");
+  const { currentUser } = useAuth();
   function openModal() {
     setOpen(true);
   }
@@ -18,6 +21,13 @@ export default function AddFolderButton() {
     e.preventDefault();
 
     //creating a folder in the databaseURL
+    database.folders.add({
+      name: name,
+      //parentid,
+      userId: currentUser.uid,
+      //     path,
+      //   createdAt,
+    });
     setName("");
     closeModal();
   }
@@ -38,12 +48,15 @@ export default function AddFolderButton() {
                 onChange={(e) => setName(e.target.value)}
               />
             </Form.Group>
-            <Modal.Footer>
-              <Button varaiant="secondary" onClick={closeModal}>
-                Add Folder
-              </Button>
-            </Modal.Footer>
           </Modal.Body>
+          <Modal.Footer>
+            <Button varaiant="secondary" onClick={closeModal}>
+              Close
+            </Button>
+            <Button varaiant="success" type="submit">
+              Add Folder
+            </Button>
+          </Modal.Footer>
         </Form>
       </Modal>
     </>
