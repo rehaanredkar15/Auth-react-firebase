@@ -19,8 +19,10 @@ export default function AddFolderButton({ currentFolder }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    if (currentFolder == null) return;
+    if (currentFolder == null) {
+      console.log(currentFolder);
+      return;
+    }
     //creating a folder in the databaseURL
     database.folders.add({
       name: name,
@@ -49,15 +51,12 @@ export default function AddFolderButton({ currentFolder }) {
                 onChange={(e) => setName(e.target.value)}
               />
             </Form.Group>
+            <Modal.Footer>
+              <Button varaiant="secondary" type="submit">
+                Add Folder
+              </Button>
+            </Modal.Footer>
           </Modal.Body>
-          <Modal.Footer>
-            <Button varaiant="secondary" onClick={closeModal}>
-              Close
-            </Button>
-            <Button varaiant="success" type="submit">
-              Add Folder
-            </Button>
-          </Modal.Footer>
         </Form>
       </Modal>
     </>

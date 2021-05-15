@@ -4,15 +4,14 @@ import AddFolderButton from "./AddFolderButton";
 import { Container } from "react-bootstrap";
 import { useFolder } from "../hooks/useFolder";
 export default function Dashboard() {
-  const { state } = useFolder();
+  const { folder } = useFolder();
 
-  console.log("the state is ");
-  console.log(state);
+  console.log(folder);
   return (
     <div>
       <Navbar />
       <Container flud>
-        <AddFolderButton />
+        <AddFolderButton currentFolder={folder} />
       </Container>
     </div>
   );

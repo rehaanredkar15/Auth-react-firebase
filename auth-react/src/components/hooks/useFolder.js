@@ -51,6 +51,5 @@ export function useFolder(folderId = null, folder = null) {
     }
   }, [folderId, folder]);
 
-  console.log(state);
   return state;
 }
