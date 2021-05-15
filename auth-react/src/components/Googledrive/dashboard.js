@@ -2,7 +2,12 @@ import React from "react";
 import Navbar from "./Navbar";
 import AddFolderButton from "./AddFolderButton";
 import { Container } from "react-bootstrap";
-export default function dashboard() {
+import { useFolder } from "../hooks/useFolder";
+export default function Dashboard() {
+  const { state } = useFolder();
+
+  console.log("the state is ");
+  console.log(state);
   return (
     <div>
       <Navbar />
