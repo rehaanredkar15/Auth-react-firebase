@@ -23,12 +23,18 @@ export default function AddFolderButton({ currentFolder }) {
       console.log(currentFolder);
       return;
     }
+
+    const path = [...currentFolder.path];
+    if (currentFolder !== ROOT_FOLDER) {
+      path.push({ name: currentFolder.name, id: currentFolder.id });
+    }
+
     //creating a folder in the databaseURL
     database.folders.add({
       name: name,
       parentid: currentFolder.id,
       userId: currentUser.uid,
-      path,
+      path: path,
       createdAt: database.getCurrentTimeStamp(),
     });
     setName("");
