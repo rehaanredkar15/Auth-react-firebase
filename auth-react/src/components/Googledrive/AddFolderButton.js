@@ -7,6 +7,7 @@ import { useAuth } from "../../Contexts/AuthContext";
 import { ROOT_FOLDER } from "../hooks/useFolder";
 
 export default function AddFolderButton({ currentFolder }) {
+
   const [open, setOpen] = useState();
   const [name, setName] = useState("");
   const { currentUser } = useAuth();

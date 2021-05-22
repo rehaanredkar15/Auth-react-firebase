@@ -16,8 +16,12 @@ export default function FolderBreadcrumbs({ currentFolder }) {
         <Breadcrumb.Item
           key={folder.id}
           linkAs={Link}
+          //we need to also pass the state here because that can increase the speed by keeping a state there while refreshing
           linkProps={{
-            to: folder.id ? `/folder/${folder.id}` : "/",
+            to: {
+              pathname: folder.id ? `/folder/${folder.id}` : "/",
+              state: { folder: { ...folder, path: path.slice(1, index) } },
+            },
           }}
           className="text-truncate d-inline-block"
           style={{ maxWidth: "150px" }}
