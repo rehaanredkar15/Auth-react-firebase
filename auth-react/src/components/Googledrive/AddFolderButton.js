@@ -28,8 +28,8 @@ export default function AddFolderButton({ currentFolder }) {
       name: name,
       parentid: currentFolder.id,
       userId: currentUser.uid,
-      //     path,
-      //   createdAt,
+      path,
+      createdAt: database.getCurrentTimeStamp(),
     });
     setName("");
     closeModal();
