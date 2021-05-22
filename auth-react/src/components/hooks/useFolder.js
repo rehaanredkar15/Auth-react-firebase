@@ -7,7 +7,7 @@ const ACTIONS = {
   UPDATE_FOLDER: "update-folder",
   SET_CHILD_FOLDERS: "set-child-folders",
 };
-const ROOT_FOLDER = { name: "Root", id: null, path: [] };
+export const ROOT_FOLDER = { name: "Root", id: null, path: [] };
 
 function reducer(state, { type, payload }) {
   // console.log(payload.folder);
@@ -82,7 +82,7 @@ export function useFolder(folderId = null, folder = null) {
       database.folders
         .where("parentid", "==", folderId)
         .where("userId", "==", currentUser.uid)
-        // .orderBy("createdAt")
+        //.orderBy("createdAt")
         .onSnapshot((snapshot) => {
           dispatch({
             type: ACTIONS.SET_CHILD_FOLDERS,
