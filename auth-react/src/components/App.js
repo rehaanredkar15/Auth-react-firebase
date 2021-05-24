@@ -5,17 +5,25 @@ import { AuthProvider } from "../Contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "./Googledrive/dashboard";
 import Login from "./authentication/Login";
+import Profile from "./authentication/Profile";
 import PrivateRoute from "./authentication/PrivateRoute";
 import ForgotPassword from "./authentication/ForgotPassword";
 import CenteredContainer from "./authentication/centeredContainer";
+import UpdateProfile from "./authentication/UpdateProfile";
 function App() {
   return (
+    //
+
     // <CenteredContainer>
-    <div className="w-100" style={{ maxWidth: "400px" }}>
+    <div>
       <Router>
         <AuthProvider>
           <Switch>
             <PrivateRoute exact path="/" component={Dashboard} />
+            <PrivateRoute path="/user" component={Profile} />
+
+            <PrivateRoute path="/update-profile" component={UpdateProfile} />
+
             <PrivateRoute
               exact
               path="/folder/:folderId"
@@ -28,7 +36,7 @@ function App() {
         </AuthProvider>
       </Router>
     </div>
-    //  </CenteredContainer>
+    //</CenteredContainer>
   );
 }
 

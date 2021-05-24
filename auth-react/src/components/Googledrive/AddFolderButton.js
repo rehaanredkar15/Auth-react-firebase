@@ -7,7 +7,6 @@ import { useAuth } from "../../Contexts/AuthContext";
 import { ROOT_FOLDER } from "../hooks/useFolder";
 
 export default function AddFolderButton({ currentFolder }) {
-
   const [open, setOpen] = useState();
   const [name, setName] = useState("");
   const { currentUser } = useAuth();
@@ -43,7 +42,12 @@ export default function AddFolderButton({ currentFolder }) {
   }
   return (
     <>
-      <Button onClick={openModal} variant="outline-success" size="sn">
+      <Button
+        className="d-flex "
+        onClick={openModal}
+        variant="outline-success"
+        size="sn"
+      >
         <FontAwesomeIcon icon={faFolderPlus} />
       </Button>
       <Modal show={open} onHide={closeModal}>
