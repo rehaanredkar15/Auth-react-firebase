@@ -17,6 +17,8 @@ export default function Dashboard() {
     state.folder
   );
 
+  console.log(childFolders.length);
+  console.log(childFiles);
   return (
     <div>
       <Navbar />
@@ -49,7 +51,7 @@ export default function Dashboard() {
                 style={{ maxWidth: "250px" }}
                 className="p-2"
               >
-                <File folder={childFile} />
+                <File file={childFile} />
               </div>
             ))}
           </div>
