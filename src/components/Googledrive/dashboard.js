@@ -31,8 +31,8 @@ export default function Dashboard() {
         {/* <div id="intro" class="view"> */}
         <Jumbotron>
           <div className="text-center">
-            <h4 className="text-danger text-bold">Hello, secret Keeper!</h4>
-            <p clasName="text-danger text-bold">Your files are Safe Here</p>
+            <h4 data-text="WELCOME">WELCOME TO BLUEBOX</h4>
+            <p className="text-success">Your files are Safe Here</p>
           </div>
 
           <h5>Your Folders: </h5>

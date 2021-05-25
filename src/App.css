@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+* {
+    font-family: 'Poppins', sans-serig
+}
+
 .jumbotron {
     background-image: url(https://images.pexels.com/photos/1225284/pexels-photo-1225284.jpeg?cs=srgb&dl=pexels-henry-%26-co-1225284.jpg&fm=jpg);
     background-repeat: no-repeat, repeat;
@@ -26,3 +31,14 @@ header,
 #intro {
     height: 100%;
 }
+
+
+/* h4 {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 20vw;
+    color: #252839;
+    -webkit-text-stroke-color: 0.3vw #383d52;
+    text-transform: uppercase;
+} */
