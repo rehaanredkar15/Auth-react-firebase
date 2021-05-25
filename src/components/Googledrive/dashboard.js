@@ -35,7 +35,7 @@ export default function Dashboard() {
             <p clasName="text-danger text-bold">Your files are Safe Here</p>
           </div>
 
-          <h5>Your Folders </h5>
+          <h5>Your Folders: </h5>
           {childFolders.length > 0 && (
             <div className="d-flex flex-wrap">
               {childFolders.map((childFolder) => (
@@ -52,7 +52,7 @@ export default function Dashboard() {
 
           {childFolders.length > 0 && childFiles.length > 0 && <hr />}
 
-          <h5>Your Files </h5>
+          <h5>Your Files: </h5>
           {childFiles.length > 0 && (
             <div className="d-flex flex-wrap">
               {childFiles.map((childFile) => (
