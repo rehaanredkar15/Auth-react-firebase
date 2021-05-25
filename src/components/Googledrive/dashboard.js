@@ -30,6 +30,11 @@ export default function Dashboard() {
         </div>
         {/* <div id="intro" class="view"> */}
         <Jumbotron>
+          <div className="text-center">
+            <h4 className="text-danger text-bold">Hello, secret Keeper!</h4>
+            <p clasName="text-danger text-bold">Your files are Safe Here</p>
+          </div>
+
           <h5>Your Folders </h5>
           {childFolders.length > 0 && (
             <div className="d-flex flex-wrap">
@@ -61,10 +66,6 @@ export default function Dashboard() {
               ))}
             </div>
           )}
-          <hr />
-          <div className="text-center">
-            <h4 className="text-danger text-bold">Hello, secret Keeper!</h4>
-          </div>
         </Jumbotron>
 
         {/* </div> */}
