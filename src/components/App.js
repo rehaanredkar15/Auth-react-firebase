@@ -1,6 +1,5 @@
 import React from "react";
 import Signup from "./authentication/Signup";
-import { Container } from "react-bootstrap";
 import { AuthProvider } from "../Contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "./Googledrive/dashboard";
@@ -8,7 +7,7 @@ import Login from "./authentication/Login";
 import Profile from "./authentication/Profile";
 import PrivateRoute from "./authentication/PrivateRoute";
 import ForgotPassword from "./authentication/ForgotPassword";
-import CenteredContainer from "./authentication/centeredContainer";
+
 import UpdateProfile from "./authentication/UpdateProfile";
 function App() {
   return (

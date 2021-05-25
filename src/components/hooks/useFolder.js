@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from "react";
+import { useReducer, useEffect } from "react";
 import { useAuth } from "../../Contexts/AuthContext";
 
 import { database } from "../../firebase";

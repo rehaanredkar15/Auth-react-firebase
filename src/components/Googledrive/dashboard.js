@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import AddFolderButton from "./AddFolderButton";
 import AddFileButton from "./AddFileButton";
-import { Container, Jumbotron, Button } from "react-bootstrap";
+import { Container, Jumbotron } from "react-bootstrap";
 import { useFolder } from "../hooks/useFolder";
 import Folder from "./Folder";
 import File from "./File";
@@ -23,7 +23,7 @@ export default function Dashboard() {
     <>
       <Navbar />
       <Container fluid>
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center ">
           <FolderBreadcrumbs currentFolder={folder} />
           <AddFileButton currentFolder={folder} />
           <AddFolderButton currentFolder={folder} />
@@ -62,8 +62,8 @@ export default function Dashboard() {
             </div>
           )}
           <div className="text-center">
-            <h4>Hello, secret Keeper!</h4>
-            <p>
+            <h4 className="text-light text-bold">Hello, secret Keeper!</h4>
+            <p className="text-light">
               This is your select box , All of your private documents are Safe
               here
             </p>
