@@ -61,6 +61,7 @@ export default function Dashboard() {
               ))}
             </div>
           )}
+          <hr />
           <div className="text-center">
             <h4 className="text-danger text-bold">Hello, secret Keeper!</h4>
           </div>
