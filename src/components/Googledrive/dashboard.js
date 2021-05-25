@@ -62,11 +62,7 @@ export default function Dashboard() {
             </div>
           )}
           <div className="text-center">
-            <h4 className="text-light text-bold">Hello, secret Keeper!</h4>
-            <p className="text-light">
-              This is your select box , All of your private documents are Safe
-              here
-            </p>
+            <h4 className="text-danger text-bold">Hello, secret Keeper!</h4>
           </div>
         </Jumbotron>
 
